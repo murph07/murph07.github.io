@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Parichit Sharma — Channel Marketing Specialist · Ledger</title>
+<title>Parichit Sharma · Application for Naboo</title>
 <style>
   :root {
     --bg-white: #FFFFFF;
@@ -23,18 +23,16 @@
     --divider-dark: rgba(255,255,255,0.1);
   }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: var(--bg-white);
     color: var(--text-primary-light);
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ── NAV ── */
+  /* NAV */
   nav {
     position: fixed;
     top: 0;
@@ -51,100 +49,134 @@
     padding: 0 24px;
     font-size: 14px;
   }
-  .nav-name { font-weight: 600; color: var(--text-primary-light); text-decoration: none; }
-  .nav-links { display: flex; gap: 24px; list-style: none; }
-  .nav-links a { color: var(--text-secondary-light); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+
+  .nav-brand {
+    font-weight: 600;
+    color: var(--text-primary-light);
+    letter-spacing: -0.01em;
+  }
+
+  .nav-brand span {
+    font-weight: 400;
+    color: var(--accent-blue);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-secondary-light);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+
   .nav-links a:hover { color: var(--accent-blue); }
 
-  /* ── HERO ── */
+  /* HERO */
   .hero {
     min-height: 100vh;
     background: var(--bg-black);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 80px 24px 64px;
     text-align: center;
-    padding: 120px 24px 80px;
   }
+
   .hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 800px;
+    max-width: 820px;
   }
+
   .hero-eyebrow {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--accent-blue-soft);
-    margin-bottom: 20px;
-    padding: 8px 20px;
     border: 1px solid rgba(94,158,255,0.35);
     border-radius: 980px;
+    padding: 8px 20px;
     display: inline-block;
+    margin-bottom: 28px;
   }
+
   .hero h1 {
-    font-size: 64px;
+    font-size: 68px;
     font-weight: 700;
-    line-height: 1.05;
+    line-height: 1.04;
     letter-spacing: -0.015em;
     color: var(--text-primary-dark);
     margin-bottom: 24px;
   }
+
+  .hero h1 span { color: var(--accent-blue-soft); }
+
   .hero-subtitle {
-    font-size: 21px;
+    font-size: 22px;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.45;
     color: var(--text-secondary-dark);
-    max-width: 600px;
+    max-width: 620px;
     margin-bottom: 48px;
   }
-  .text-blue-dark { color: var(--accent-blue-soft); }
-  .text-blue { color: var(--accent-navy-light); }
+
   .cta-group {
     display: flex;
     gap: 16px;
     align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
   }
+
   .cta-button {
     display: inline-block;
     background: var(--accent-blue);
     color: white;
-    padding: 12px 28px;
+    padding: 14px 28px;
     border-radius: 980px;
     font-size: 17px;
     font-weight: 400;
     text-decoration: none;
     transition: background 0.3s ease;
   }
+
   .cta-button:hover { background: var(--accent-blue-hover); }
+
   .cta-link {
-    display: inline-block;
     color: var(--accent-blue-soft);
     font-size: 17px;
     text-decoration: none;
+    transition: opacity 0.2s;
   }
-  .cta-link:hover { text-decoration: underline; }
 
-  /* ── SECTIONS ── */
+  .cta-link:hover { opacity: 0.7; }
+
+  /* SECTIONS */
   section {
     padding: 100px 24px;
   }
+
   .section-inner {
     max-width: 980px;
     margin: 0 auto;
   }
+
   .section-eyebrow {
     font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
+
   .light-section .section-eyebrow { color: var(--accent-navy); }
   .dark-section .section-eyebrow { color: #86868B; }
 
@@ -156,304 +188,373 @@
     text-align: center;
     margin-bottom: 16px;
   }
+
   .light-section .section-heading { color: var(--text-primary-light); }
   .dark-section .section-heading { color: var(--text-primary-dark); }
 
+  .text-blue-light { color: var(--accent-navy-light); }
+  .text-blue-dark { color: var(--accent-blue-soft); }
+
   .section-subheading {
-    font-size: 21px;
+    font-size: 22px;
     font-weight: 400;
     line-height: 1.38;
     text-align: center;
-    margin-bottom: 64px;
+    max-width: 640px;
+    margin: 0 auto 64px;
   }
+
   .light-section .section-subheading { color: var(--text-secondary-light); }
   .dark-section .section-subheading { color: var(--text-secondary-dark); }
 
-  .body-copy {
-    max-width: 680px;
-    margin: 0 auto;
-    font-size: 17px;
-    line-height: 1.58;
-  }
-  .light-section .body-copy { color: var(--text-secondary-light); }
-  .dark-section .body-copy { color: var(--text-secondary-dark); }
-
+  /* LIGHT / DARK SECTIONS */
   .light-section { background: var(--bg-light); }
+  .alt-light-section { background: var(--bg-white); }
   .dark-section { background: var(--bg-dark); }
-  .white-section { background: var(--bg-white); }
+  .black-section { background: var(--bg-black); }
 
-  /* ── FEATURE GRID ── */
+  /* FEATURE GRID */
   .feature-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
     margin-top: 0;
   }
+
   .feature-card {
     border-radius: 18px;
-    padding: 40px 32px;
-    text-align: left;
+    padding: 36px 32px;
   }
+
   .light-section .feature-card { background: var(--bg-white); }
-  .white-section .feature-card { background: var(--bg-light); }
+  .alt-light-section .feature-card { background: var(--bg-light); }
   .dark-section .feature-card { background: rgba(255,255,255,0.06); }
 
-  .card-badge {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 980px;
+  .feature-card-icon {
+    font-size: 28px;
     margin-bottom: 16px;
+    display: block;
   }
-  .badge-blue { background: rgba(0,113,227,0.12); color: var(--accent-blue); }
-  .badge-green { background: rgba(52,199,89,0.12); color: #34C759; }
-  .badge-orange { background: rgba(255,159,10,0.12); color: #FF9F0A; }
-  .badge-purple { background: rgba(175,82,222,0.12); color: #AF52DE; }
-  .badge-red { background: rgba(255,59,48,0.12); color: #FF3B30; }
 
   .feature-card h3 {
-    font-size: 21px;
+    font-size: 20px;
     font-weight: 600;
     line-height: 1.24;
     letter-spacing: -0.005em;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
+
   .light-section .feature-card h3,
-  .white-section .feature-card h3 { color: var(--text-primary-light); }
+  .alt-light-section .feature-card h3 { color: var(--text-primary-light); }
   .dark-section .feature-card h3 { color: var(--text-primary-dark); }
 
   .feature-card p {
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.58;
   }
+
   .light-section .feature-card p,
-  .white-section .feature-card p { color: var(--text-secondary-light); }
+  .alt-light-section .feature-card p { color: var(--text-secondary-light); }
   .dark-section .feature-card p { color: var(--text-secondary-dark); }
 
-  /* ── FIT GRID ── */
-  .fit-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    border-radius: 18px;
-    overflow: hidden;
-    margin-top: 0;
-  }
-  .fit-cell {
-    padding: 40px 32px;
-  }
-  .fit-cell.left { background: rgba(255,255,255,0.04); }
-  .fit-cell.right { background: rgba(255,255,255,0.08); }
-  .fit-label {
+  /* BADGE */
+  .badge {
+    display: inline-block;
     font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #86868B;
-    margin-bottom: 12px;
-  }
-  .fit-cell h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--text-primary-dark);
+    padding: 4px 10px;
+    border-radius: 980px;
     margin-bottom: 10px;
   }
-  .fit-cell p {
-    font-size: 15px;
-    line-height: 1.6;
-    color: var(--text-secondary-dark);
-  }
-  .fit-metric {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--accent-blue-soft);
-    margin-bottom: 4px;
+
+  .badge-blue {
+    background: rgba(0,113,227,0.1);
+    color: var(--accent-navy-light);
   }
 
-  /* ── 90 DAYS ── */
-  .moves-grid {
+  .badge-green {
+    background: rgba(52,199,89,0.1);
+    color: #1a7a32;
+  }
+
+  .badge-dark-blue {
+    background: rgba(94,158,255,0.12);
+    color: var(--accent-blue-soft);
+  }
+
+  .badge-dark-green {
+    background: rgba(52,199,89,0.12);
+    color: #4cd964;
+  }
+
+  /* MATCH GRID */
+  .match-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 24px;
   }
-  .move-card {
-    background: var(--bg-light);
-    border-radius: 18px;
-    padding: 40px 32px;
+
+  /* PROOF ROW */
+  .proof-body {
+    max-width: 700px;
+    margin: 0 auto;
   }
+
+  .proof-body p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .light-section .proof-body p { color: var(--text-secondary-light); }
+  .alt-light-section .proof-body p { color: var(--text-secondary-light); }
+  .dark-section .proof-body p { color: var(--text-secondary-dark); }
+
+  /* 90-DAY SECTION */
+  .moves-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 0;
+  }
+
+  .move-card {
+    border-radius: 18px;
+    padding: 36px 40px;
+    background: rgba(255,255,255,0.05);
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
   .move-number {
     font-size: 48px;
     font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--accent-navy-light);
-    opacity: 0.3;
+    color: rgba(94,158,255,0.3);
     line-height: 1;
-    margin-bottom: 16px;
-  }
-  .move-card h3 {
-    font-size: 19px;
-    font-weight: 600;
-    color: var(--text-primary-light);
-    margin-bottom: 12px;
-  }
-  .move-card p {
-    font-size: 15px;
-    line-height: 1.6;
-    color: var(--text-secondary-light);
-    margin-bottom: 16px;
-  }
-  .move-impact {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--accent-navy-light);
-    border-top: 1px solid var(--divider-light);
-    padding-top: 16px;
+    letter-spacing: -0.02em;
   }
 
-  /* ── TIMELINE ── */
-  .timeline {
-    max-width: 780px;
-    margin: 0 auto;
+  .move-content h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary-dark);
+    margin-bottom: 8px;
   }
+
+  .move-content .move-insight {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent-blue-soft);
+    margin-bottom: 12px;
+  }
+
+  .move-content p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text-secondary-dark);
+    margin-bottom: 12px;
+  }
+
+  .move-content .impact {
+    font-size: 15px;
+    font-weight: 500;
+    color: #4cd964;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
   .timeline-item {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 32px;
+    grid-template-columns: 220px 1fr;
+    gap: 40px;
     padding: 32px 0;
     border-top: 1px solid var(--divider-light);
   }
+
   .timeline-date {
-    font-size: 12px;
+    color: var(--text-secondary-light);
+    font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--text-secondary-light);
     padding-top: 4px;
   }
+
   .timeline-content h3 {
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 600;
     color: var(--text-primary-light);
     margin-bottom: 4px;
   }
-  .timeline-org {
+
+  .timeline-content .company {
     font-size: 14px;
+    color: var(--accent-navy-light);
     font-weight: 500;
-    color: var(--accent-blue);
-    margin-bottom: 12px;
-  }
-  .timeline-content ul {
-    padding-left: 18px;
-  }
-  .timeline-content li {
-    font-size: 15px;
-    line-height: 1.6;
-    color: var(--text-secondary-light);
-    margin-bottom: 6px;
+    margin-bottom: 10px;
   }
 
-  /* ── STATS ROW ── */
-  .stats-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2px;
-    margin-top: 64px;
-    border-radius: 18px;
-    overflow: hidden;
+  .timeline-content ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
-  .stat-cell {
-    background: rgba(255,255,255,0.05);
-    padding: 40px 24px;
+
+  .timeline-content ul li {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text-secondary-light);
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .timeline-content ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--divider-light);
+    font-size: 12px;
+  }
+
+  /* COMPETITOR TABLE */
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0;
+  }
+
+  .comp-table th {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary-light);
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--divider-light);
+  }
+
+  .comp-table td {
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 20px 20px;
+    color: var(--text-secondary-light);
+    border-bottom: 1px solid var(--divider-light);
+    vertical-align: top;
+  }
+
+  .comp-table td:first-child {
+    font-weight: 600;
+    color: var(--text-primary-light);
+    font-size: 15px;
+  }
+
+  .tick { color: #1a7a32; font-size: 17px; font-weight: 600; }
+  .cross { color: #c0392b; font-size: 17px; font-weight: 600; }
+
+  /* CTA FINAL */
+  .contact-grid {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 0;
+  }
+
+  .contact-item {
     text-align: center;
   }
+
+  .contact-label {
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #86868B;
+    margin-bottom: 8px;
+  }
+
+  .contact-value {
+    font-size: 18px;
+    color: var(--text-primary-dark);
+    font-weight: 400;
+  }
+
+  .contact-value a {
+    color: var(--accent-blue-soft);
+    text-decoration: none;
+  }
+
+  /* STAT ROW */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .stat-box {
+    text-align: center;
+    padding: 32px 16px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 16px;
+    border: 1px solid var(--divider-dark);
+  }
+
   .stat-number {
     font-size: 40px;
     font-weight: 700;
-    letter-spacing: -0.02em;
     color: var(--text-primary-dark);
+    letter-spacing: -0.02em;
+    line-height: 1;
     margin-bottom: 8px;
   }
+
   .stat-label {
-    font-size: 13px;
+    font-size: 14px;
+    color: var(--text-secondary-dark);
     line-height: 1.4;
-    color: var(--text-secondary-dark);
   }
 
-  /* ── CTA SECTION ── */
-  .cta-section {
-    background: var(--bg-black);
-    text-align: center;
-    padding: 120px 24px;
-  }
-  .cta-section h2 {
-    font-size: 48px;
-    font-weight: 700;
-    letter-spacing: -0.015em;
-    color: var(--text-primary-dark);
-    margin-bottom: 16px;
-  }
-  .cta-section p {
-    font-size: 19px;
-    color: var(--text-secondary-dark);
-    margin-bottom: 48px;
-  }
-  .contact-row {
-    display: flex;
-    gap: 32px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 48px;
-  }
-  .contact-item {
-    font-size: 15px;
-    color: var(--text-secondary-dark);
-  }
-  .contact-item a { color: var(--accent-blue-soft); text-decoration: none; }
-  .contact-item a:hover { text-decoration: underline; }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--bg-black);
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding: 24px;
-    text-align: center;
-    font-size: 13px;
-    color: #555;
+  /* ANIMATIONS - always visible for recruiter friendliness */
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
   }
 
-  /* ── ANIMATIONS ── */
-  .js-loaded .animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.25,0.46,0.45,0.94),
-                transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
-  }
-  .js-loaded .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
-  .js-loaded .delay-1 { transition-delay: 0.1s; }
-  .js-loaded .delay-2 { transition-delay: 0.2s; }
-  .js-loaded .delay-3 { transition-delay: 0.3s; }
-  .js-loaded .delay-4 { transition-delay: 0.4s; }
+  .delay-1, .delay-2, .delay-3 {}
 
-  /* ── RESPONSIVE ── */
+  /* RESPONSIVE */
   @media (max-width: 734px) {
     .hero h1 { font-size: 36px; }
-    .section-heading { font-size: 28px; }
-    section { padding: 72px 24px; }
+    .section-heading { font-size: 30px; }
+    section { padding: 72px 20px; }
     .feature-grid { grid-template-columns: 1fr; }
-    .fit-grid { grid-template-columns: 1fr; }
-    .moves-grid { grid-template-columns: 1fr; }
+    .match-grid { grid-template-columns: 1fr; }
     .timeline-item { grid-template-columns: 1fr; gap: 8px; }
-    .stats-row { grid-template-columns: 1fr 1fr; }
+    .move-card { grid-template-columns: 1fr; gap: 16px; }
+    .move-number { font-size: 32px; }
+    .stat-row { grid-template-columns: 1fr; }
+    .comp-table { display: none; }
     .nav-links { display: none; }
-    .cta-section h2 { font-size: 32px; }
   }
+
   @media (min-width: 735px) and (max-width: 1068px) {
-    .hero h1 { font-size: 48px; }
+    .hero h1 { font-size: 50px; }
     .section-heading { font-size: 36px; }
-    .moves-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -461,12 +562,12 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-name">Parichit Sharma &nbsp;·&nbsp; <span style="font-weight:400; color: var(--accent-blue);">Application for Ledger</span></a>
+  <div class="nav-brand">Parichit Sharma · <span>Application for Naboo</span></div>
   <ul class="nav-links">
-    <li><a href="#research">Intelligence</a></li>
+    <li><a href="#intelligence">Research</a></li>
     <li><a href="#fit">Why Me</a></li>
-    <li><a href="#90days">First 90 Days</a></li>
-    <li><a href="#experience">Experience</a></li>
+    <li><a href="#moves">90 Days</a></li>
+    <li><a href="#landscape">Market Intel</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -474,301 +575,249 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <p class="hero-eyebrow">Job Application — Channel Marketing Specialist · Ledger · Paris</p>
-    <h1>The Channel Is Where <span class="text-blue-dark">Trust</span> Gets Built.</h1>
-    <p class="hero-subtitle">Ledger secures 20% of the world's crypto assets. That story only holds if every retail touchpoint executes flawlessly. That's where I come in.</p>
+    <div class="hero-eyebrow">Job Application — Partnership, SEO & CRM Marketing · Naboo · Paris</div>
+    <h1>Built to grow<br><span>partner networks.</span></h1>
+    <p class="hero-subtitle">Naboo's Host network is its most underleveraged growth engine. I've spent three years turning partner relationships into measurable organic growth — at a B2B SaaS, a luxury retail platform, and an envirotech startup. This is what I do.</p>
     <div class="cta-group">
-      <a href="#fit" class="cta-button">See the Match</a>
-      <a href="#contact" class="cta-link">Get in touch ↓</a>
+      <a href="#contact" class="cta-button">Get in touch</a>
+      <a href="#intelligence" class="cta-link">See the research ↓</a>
     </div>
   </div>
 </section>
 
-<!-- COMPANY INTELLIGENCE -->
-<section class="dark-section" id="research">
+<!-- SECTION 1: COMPANY INTELLIGENCE -->
+<section class="light-section" id="intelligence">
   <div class="section-inner">
-    <p class="section-eyebrow animate-on-scroll">Company Intelligence</p>
-    <h2 class="section-heading animate-on-scroll delay-1">What I Know About <span class="text-blue-dark">Ledger</span></h2>
-    <p class="section-subheading animate-on-scroll delay-2">Four insights — none of which repeat the job description.</p>
+    <p class="section-eyebrow animate-on-scroll">Market Intelligence</p>
+    <h2 class="section-heading animate-on-scroll">What I know about<br><span class="text-blue-light">Naboo's position</span></h2>
+    <p class="section-subheading animate-on-scroll">Four observations worth discussing.</p>
 
     <div class="feature-grid">
       <div class="feature-card animate-on-scroll">
-        <span class="card-badge badge-blue">Market Position</span>
-        <h3>The Infrastructure Play</h3>
-        <p>Ledger doesn't compete on price. With 7.5M+ wallets in 200 countries, it's the crypto industry's trust layer. That creates a clear channel challenge: scale through mass retail without diluting a premium brand.</p>
+        <span class="badge badge-blue">Growth Signal</span>
+        <h3>$150M in booking volume. Zero client churn.</h3>
+        <p>Your Series B (Lightspeed, Feb 2026) signals you're past product-market fit and into category leadership mode. The Host network isn't just supply — it's your distribution moat as you expand into UK, Germany, Spain, and the US.</p>
       </div>
       <div class="feature-card animate-on-scroll delay-1">
-        <span class="card-badge badge-green">Growth Signal</span>
-        <h3>APAC & US — The Revenue Frontier</h3>
-        <p>The wholesale team is explicitly focused here. These markets behave differently from EMEA — partner expectations, compliance contexts, and consumer trust signals all shift. Channel fluency across retail cultures is the job.</p>
+        <span class="badge badge-blue">Strategic Shift</span>
+        <h3>Marketplace → SaaS-enabled marketplace.</h3>
+        <p>Maxime Eduardo publicly framed this transition post-Series A. It means Hosts are no longer just suppliers — they're embedded partners who need a brand reason to stay. That's what this role builds.</p>
       </div>
       <div class="feature-card animate-on-scroll delay-2">
-        <span class="card-badge badge-purple">Brand Risk</span>
-        <h3>Premium Brand, Mass Distribution</h3>
-        <p>Every partner touchpoint — US electronics chain, Asian marketplace banner — is a brand compliance moment. Protecting Ledger's premium image at distribution scale requires someone who has done this before, in demanding retail environments.</p>
+        <span class="badge badge-green">Opportunity Gap</span>
+        <h3>The Host side has no brand story yet.</h3>
+        <p>Your buyer-facing brand is polished. But Longchamp, unique venues, and event spaces need a reason to join and stay — a clear "why Naboo" that goes beyond listing exposure. That narrative doesn't exist yet. This role creates it.</p>
       </div>
       <div class="feature-card animate-on-scroll delay-3">
-        <span class="card-badge badge-orange">Industry Shift</span>
-        <h3>Web3 Goes Mainstream</h3>
-        <p>Ledger devices are increasingly shelved next to headphones and smart gadgets. Channel marketing must now speak to the crypto-native and the curious first-timer — simultaneously.</p>
+        <span class="badge badge-green">Market Context</span>
+        <h3>Remote work made in-person events essential.</h3>
+        <p>MICE is now a strategic spend category, not a perk. Your clients — KPMG, Meta, a quarter of the CAC40 — are spending more and demanding more. Partner quality and variety is what differentiates you from Cvent and Kactus at enterprise scale.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COMPETITOR LANDSCAPE -->
-<section class="light-section">
-  <div class="section-inner">
-    <p class="section-eyebrow animate-on-scroll">Competitive Landscape</p>
-    <h2 class="section-heading animate-on-scroll delay-1">The Market <span class="text-blue">Ledger Plays In</span></h2>
-    <p class="section-subheading animate-on-scroll delay-2">Three dynamics shaping the channel opportunity.</p>
-
-    <div class="feature-grid">
-      <div class="feature-card animate-on-scroll">
-        <span class="card-badge badge-red">Competitor Gap</span>
-        <h3>Trezor: Strong on Credibility, Weak on Retail</h3>
-        <p>Trezor wins with technical audiences on open-source grounds. But its retail presence is thin. Ledger can own the in-store moment — the first hardware wallet purchase by a non-technical buyer — where Trezor rarely competes.</p>
-      </div>
-      <div class="feature-card animate-on-scroll delay-1">
-        <span class="card-badge badge-blue">Channel Opportunity</span>
-        <h3>Distribution Depth Is the Moat</h3>
-        <p>No competitor matches Ledger's retail network. That makes channel execution — not R&D — the real competitive edge. Asset quality, launch coordination, and ROI discipline directly determine whether Ledger defends or grows its share.</p>
-      </div>
-      <div class="feature-card animate-on-scroll delay-2">
-        <span class="card-badge badge-green">Whitespace</span>
-        <h3>Trust Storytelling at Retail</h3>
-        <p>Category assets tend to be technical and fear-driven. The brand that makes self-custody feel empowering — especially in APAC, where adoption is accelerating — wins the mainstream buyer.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY ME -->
+<!-- SECTION 2: WHY ME -->
 <section class="dark-section" id="fit">
   <div class="section-inner">
-    <p class="section-eyebrow animate-on-scroll">Profile Match</p>
-    <h2 class="section-heading animate-on-scroll delay-1">Built for This Role.</h2>
-    <p class="section-subheading animate-on-scroll delay-2">Every requirement paired with a proof point.</p>
+    <p class="section-eyebrow animate-on-scroll">Candidate Fit</p>
+    <h2 class="section-heading animate-on-scroll">I've done this.<br>Three times over.</h2>
+    <p class="section-subheading animate-on-scroll">This role asks for SEO, partner branding, and CRM nurturing in one person. That's not a stretch for me — it's my track record.</p>
 
-    <div class="fit-grid animate-on-scroll">
-      <div class="fit-cell left">
-        <p class="fit-label">What Ledger Needs</p>
-        <h3>End-to-end campaign execution across retail partners</h3>
-        <p>Online and offline, awareness to conversion, across regional partner networks.</p>
+    <div class="match-grid">
+      <div class="feature-card animate-on-scroll">
+        <span class="badge badge-dark-blue">SEO & Partner Pages</span>
+        <h3>Partner pages that rank and convert</h3>
+        <p>At Upfluence, I produced 21+ SEO assets — partner pages, guides, blog articles — driving 21% organic growth and 480 qualified leads across France and DACH. At Global Blue, I wrote and localised partner landing pages across 6 EMEA markets for 30+ enterprise accounts, generating 3,200 partner interactions.</p>
       </div>
-      <div class="fit-cell right">
-        <p class="fit-label">What I've Delivered</p>
-        <div class="fit-metric">€250K</div>
-        <p>Full-funnel campaigns across 30+ luxury retail partners (Chanel, Prada) in 6 EMEA markets — €250K incremental revenue, +24.6% ROI.</p>
+      <div class="feature-card animate-on-scroll delay-1">
+        <span class="badge badge-dark-blue">Host Branding & LinkedIn</span>
+        <h3>B2B content that earns distribution</h3>
+        <p>I maintained an 8-month editorial calendar aligned with 23 product launches at Upfluence, keeping open rates and LinkedIn engagement consistent. I know the difference between content that gets scheduled and content that gets shared.</p>
       </div>
-
-      <div class="fit-cell left">
-        <p class="fit-label">What Ledger Needs</p>
-        <h3>In-store display & digital asset production</h3>
-        <p>Concept to delivery, coordinating design, vendors, and regional teams.</p>
+      <div class="feature-card animate-on-scroll delay-2">
+        <span class="badge badge-dark-green">CRM & Onboarding Flows</span>
+        <h3>Onboarding that actually onboards</h3>
+        <p>At Global Blue, I designed onboarding email sequences for 30+ enterprise partners, onboarding 1,324 platform users and improving early-stage engagement by 19% on priority accounts. At Upfluence, I built HubSpot flows that cut churn by 6% and improved activation by 11.2%.</p>
       </div>
-      <div class="fit-cell right">
-        <p class="fit-label">What I've Delivered</p>
-        <div class="fit-metric">15+</div>
-        <p>Produced 15+ digital assets for trade shows across DACH, Denmark, and the Netherlands — 32% event visibility improvement, delivered on time.</p>
-      </div>
-
-      <div class="fit-cell left">
-        <p class="fit-label">What Ledger Needs</p>
-        <h3>Performance tracking & revenue optimization</h3>
-        <p>Rigorous ROI monitoring focused on revenue impact.</p>
-      </div>
-      <div class="fit-cell right">
-        <p class="fit-label">What I've Delivered</p>
-        <div class="fit-metric">−21%</div>
-        <p>ROI dashboards (ROAS, CPA, CTR) at Global Blue cut campaign decision time by 21% and supported pipeline growth across strategic accounts.</p>
-      </div>
-
-      <div class="fit-cell left">
-        <p class="fit-label">What Ledger Needs</p>
-        <h3>Cross-functional & partner coordination</h3>
-        <p>Central point of contact between external partners and Sales, Design, Content.</p>
-      </div>
-      <div class="fit-cell right">
-        <p class="fit-label">What I've Delivered</p>
-        <div class="fit-metric">23</div>
-        <p>Managed 23 GTM launches at Upfluence — coordinating Sales, Design, and Content — driving adoption across 73 enterprise clients in France and APAC.</p>
-      </div>
-
-      <div class="fit-cell left">
-        <p class="fit-label">What Ledger Needs</p>
-        <h3>AI tools & Web3 mindset</h3>
-        <p>Comfort using AI to streamline workflows and appetite for the crypto ecosystem.</p>
-      </div>
-      <div class="fit-cell right">
-        <p class="fit-label">What I've Delivered</p>
-        <div class="fit-metric">−46%</div>
-        <p>Integrated AI tools across 4 B2B clients at Emergence Software — campaign launch time from 5+ days to under 3, reporting time cut by 46%.</p>
+      <div class="feature-card animate-on-scroll delay-3">
+        <span class="badge badge-dark-green">AI as a Speed Lever</span>
+        <h3>AI for research, drafting, analysis</h3>
+        <p>I use N8N, Zapier, and AI-assisted workflows in my day-to-day. This isn't a line on a CV — it's how I rebuilt editorial playbooks for 4 B2B clients at Emergence Software, cutting content production from 5+ days to under 3.</p>
       </div>
     </div>
 
-    <div class="stats-row animate-on-scroll">
-      <div class="stat-cell">
-        <div class="stat-number">30+</div>
-        <div class="stat-label">Retail partners managed simultaneously</div>
+    <div class="stat-row animate-on-scroll">
+      <div class="stat-box">
+        <div class="stat-number">€250K</div>
+        <div class="stat-label">Incremental revenue from<br>partner pages at Global Blue</div>
       </div>
-      <div class="stat-cell">
+      <div class="stat-box">
+        <div class="stat-number">+200%</div>
+        <div class="stat-label">Growth in qualified engagement<br>rebuilt in under 3 months</div>
+      </div>
+      <div class="stat-box">
         <div class="stat-number">6</div>
-        <div class="stat-label">EMEA markets — campaigns live at once</div>
-      </div>
-      <div class="stat-cell">
-        <div class="stat-number">73</div>
-        <div class="stat-label">Enterprise clients — GTM coordination</div>
-      </div>
-      <div class="stat-cell">
-        <div class="stat-number">480</div>
-        <div class="stat-label">Qualified B2B leads generated in one quarter</div>
+        <div class="stat-label">EMEA markets localised<br>across 30+ enterprise accounts</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 90 DAYS -->
-<section class="white-section" id="90days">
+<!-- SECTION 4: 90 DAYS -->
+<section class="dark-section" id="moves">
   <div class="section-inner">
     <p class="section-eyebrow animate-on-scroll">First 90 Days</p>
-    <h2 class="section-heading animate-on-scroll delay-1">Three Moves I Would Explore</h2>
-    <p class="section-subheading animate-on-scroll delay-2">Hypotheses — informed by research, calibrated by ground reality.</p>
+    <h2 class="section-heading animate-on-scroll">Three moves I would<br>explore <span class="text-blue-dark">from day one.</span></h2>
+    <p class="section-subheading animate-on-scroll">Hypothesis-driven, company-specific, realistic. Not a plan — a starting conversation.</p>
 
-    <div class="moves-grid">
+    <div class="moves-list">
       <div class="move-card animate-on-scroll">
         <div class="move-number">01</div>
-        <h3>Partner Asset Audit & Brand Sweep</h3>
-        <p>Map every live retail touchpoint across APAC and US partners — displays, banners, e-commerce listings — against Ledger's brand standards. Gaps become the action list.</p>
-        <p class="move-impact">→ Eliminate brand risk before the next campaign cycle. Build credibility with Design and Sales fast.</p>
+        <div class="move-content">
+          <div class="move-insight">SEO · Backlinks</div>
+          <h3>Map the partner-driven keyword gap and build the first 5 venue guides.</h3>
+          <p>Most corporate event search intent is location-and-format specific: "seminar venue countryside near Paris," "team-building space Lyon rooftop." Naboo's Hosts hold the content — the stories, the photos, the capacity data. I would audit which high-intent queries have no owned content, identify 5–10 Host partners with strong differentiation, and co-produce SEO venue guides that generate qualified organic traffic and earn natural backlinks.</p>
+          <p class="impact">→ Expected output: first backlinks live within 60 days, partner pages ranking within 90.</p>
+        </div>
       </div>
+
       <div class="move-card animate-on-scroll delay-1">
         <div class="move-number">02</div>
-        <h3>ROI Baseline — Channel by Channel</h3>
-        <p>Establish a shared dashboard tracking ROAS, CPA, and conversion by partner and region. Surface what's actually driving revenue, and give leadership faster budget decisions.</p>
-        <p class="move-impact">→ Data-informed channel prioritisation for Q3/Q4. Less reporting overhead, more decision speed.</p>
+        <div class="move-content">
+          <div class="move-insight">LinkedIn · Host Branding</div>
+          <h3>Launch a Host spotlight series on LinkedIn — one story per week.</h3>
+          <p>Venue owners and activity providers have audiences too. A well-produced spotlight post (photo, story, 3 key differentiators) tags the Host's own LinkedIn page, reaches their network, and positions Naboo as a platform that actively promotes its partners — not just lists them. This earns trust with existing Hosts and signals real value to prospective ones. I would build an editorial template, define the selection criteria, and coordinate with whichever photo/video resources are available.</p>
+          <p class="impact">→ Expected output: consistent weekly cadence established, measurable reach growth on Host content within 45 days.</p>
+        </div>
       </div>
+
       <div class="move-card animate-on-scroll delay-2">
         <div class="move-number">03</div>
-        <h3>APAC Partner Localisation Guide</h3>
-        <p>APAC retail markets have distinct visual norms and compliance expectations. A lightweight localisation guide for partner assets reduces back-and-forth without diluting Ledger's messaging.</p>
-        <p class="move-impact">→ Faster asset delivery in APAC. Stronger partner relationships through proactive support.</p>
+        <div class="move-content">
+          <div class="move-insight">CRM · Retention</div>
+          <h3>Audit the onboarding flow and redesign the Host newsletter from the first issue.</h3>
+          <p>Onboarding is where churn is decided — not at renewal. I would map the current Host journey from sign-up to first booking, identify drop-off points, and redesign the email sequence to include clear milestones, early-win prompts, and value reinforcement at key moments. In parallel, the Host newsletter should read like an insider brief — booking trends, platform updates, and specific tips for maximising their Naboo profile — not a corporate bulletin.</p>
+          <p class="impact">→ Expected output: redesigned onboarding flow live within 60 days, newsletter rhythm established at month 2.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section class="light-section" id="experience">
+<!-- SECTION 5: COMPETITIVE LANDSCAPE -->
+<section class="alt-light-section" id="landscape">
   <div class="section-inner">
-    <p class="section-eyebrow animate-on-scroll">Background</p>
-    <h2 class="section-heading animate-on-scroll delay-1">The Credibility Behind the Claims</h2>
-    <p class="section-subheading animate-on-scroll delay-2">Channel, partner, and campaign execution across B2B SaaS, luxury retail, and sustainability tech.</p>
+    <p class="section-eyebrow animate-on-scroll">Market Intelligence</p>
+    <h2 class="section-heading animate-on-scroll">Where <span class="text-blue-light">Naboo wins</span> —<br>and where the gap is open.</h2>
+    <p class="section-subheading animate-on-scroll">No competitor has built a partner-side content and SEO engine. That position is unclaimed.</p>
 
-    <div class="timeline animate-on-scroll">
-      <div class="timeline-item">
-        <div class="timeline-date">Oct 2025 – Present</div>
-        <div class="timeline-content">
-          <h3>Growth & Marketing Strategy Consultant</h3>
-          <div class="timeline-org">Emergence Software · Paris</div>
-          <ul>
-            <li>Performance dashboard across 8 acquisition metrics — reporting time cut by 46%</li>
-            <li>AI tool integration across 4 B2B clients — campaign launch from 5+ days to under 3</li>
-          </ul>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">Feb – May 2025</div>
-        <div class="timeline-content">
-          <h3>Associate Digital Marketing Manager</h3>
-          <div class="timeline-org">Global Blue · Paris (B2B SaaS — luxury retail)</div>
-          <ul>
-            <li>30+ retail partners (Chanel, Prada), 6 EMEA markets → €250K revenue, +24.6% ROI</li>
-            <li>15+ digital assets for DACH & Nordic trade shows → 32% visibility improvement</li>
-            <li>ROI dashboards (ROAS, CPA, CTR) → −21% campaign decision time</li>
-          </ul>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">Mar – Oct 2024</div>
-        <div class="timeline-content">
-          <h3>Associate Product Marketing Manager</h3>
-          <div class="timeline-org">Upfluence · Lyon (B2B SaaS — influencer marketing)</div>
-          <ul>
-            <li>23 GTM launches, 73 enterprise clients across France and APAC</li>
-            <li>21+ partner assets → +25% content engagement, €160K quarterly revenue growth</li>
-            <li>480 qualified B2B leads via paid social, search, and partner outreach</li>
-          </ul>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">Apr 2019 – Feb 2023</div>
-        <div class="timeline-content">
-          <h3>Product & Growth Marketing Manager</h3>
-          <div class="timeline-org">ARTH · New Delhi (B2B Envirotech)</div>
-          <ul>
-            <li>Brand expansion across 200 sq. km in 11 months — OOH, events, social</li>
-            <li>London Business School Real Innovation Award</li>
-          </ul>
-        </div>
-      </div>
+    <div style="overflow-x:auto;" class="animate-on-scroll">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Platform</th>
+            <th>Partner SEO</th>
+            <th>Host branding</th>
+            <th>CRM nurturing</th>
+            <th>AI-native</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background: rgba(0,113,227,0.04);">
+            <td>Naboo — with this role</td>
+            <td><span class="tick">✓</span> Venue guides + backlinks</td>
+            <td><span class="tick">✓</span> LinkedIn spotlights</td>
+            <td><span class="tick">✓</span> Onboarding → reactivation</td>
+            <td><span class="tick">✓</span> AI-assisted workflows</td>
+          </tr>
+          <tr>
+            <td>Kactus / Bird Office</td>
+            <td><span class="cross">✗</span> Listing pages only</td>
+            <td><span class="cross">✗</span> None</td>
+            <td><span class="cross">✗</span> Transactional emails</td>
+            <td><span class="cross">✗</span> None</td>
+          </tr>
+          <tr>
+            <td>Planned</td>
+            <td><span class="cross">✗</span> Buyer-focused only</td>
+            <td><span class="cross">✗</span> Generic</td>
+            <td>Partial</td>
+            <td>Partial</td>
+          </tr>
+          <tr>
+            <td>Cvent</td>
+            <td>Partial — US only</td>
+            <td><span class="cross">✗</span> Admin listing</td>
+            <td><span class="tick">✓</span> Enterprise CRM</td>
+            <td>Partial</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <div style="max-width: 780px; margin: 48px auto 0; padding-top: 32px; border-top: 1px solid var(--divider-light);">
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px;">
-        <div>
-          <p style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--accent-navy); margin-bottom: 10px;">Education</p>
-          <p style="font-size: 15px; font-weight: 600; color: var(--text-primary-light); margin-bottom: 4px;">MSc Marketing Management</p>
-          <p style="font-size: 13px; color: var(--text-secondary-light);">Grenoble École de Management, 2022–2025</p>
-        </div>
-        <div>
-          <p style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--accent-navy); margin-bottom: 10px;">Languages</p>
-          <p style="font-size: 15px; color: var(--text-secondary-light);">English (native) · French (professional)</p>
-        </div>
-        <div>
-          <p style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--accent-navy); margin-bottom: 10px;">Status</p>
-          <p style="font-size: 15px; color: var(--text-secondary-light);">APS — fully authorised to work in France. Based in Paris.</p>
-        </div>
+    <div class="feature-grid animate-on-scroll" style="margin-top: 32px;">
+      <div class="feature-card">
+        <h3>Kactus & Planned list venues.<br>Naboo can tell their story.</h3>
+        <p>Both platforms rely on cold outreach and listing fees to acquire partners. No content, no organic trust, no brand lift for the venue. Hosts have no reason to prefer them — or stay.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Cvent owns enterprise procurement.<br>Not the partner relationship.</h3>
+        <p>Strong on buyer-side compliance and RFP workflows, but the partner experience is purely administrative. Venues fill a form and wait. No narrative, no visibility, no engagement loop.</p>
+      </div>
+      <div class="feature-card">
+        <h3>The gap: partner-side SEO<br>and content no one is building.</h3>
+        <p>Hosts who feel Naboo actively promotes their visibility — not just uses their inventory — activate more, churn less, and refer others. Venue guides, LinkedIn spotlights, and smart CRM flows are the mechanism. None of your competitors are doing this.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section" id="contact">
-  <div style="max-width: 600px; margin: 0 auto;">
-    <p style="font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #86868B; margin-bottom: 16px;">Let's Talk</p>
-    <h2>Ready to make Ledger's <span style="color: var(--accent-blue-soft);">channel stronger.</span></h2>
-    <p>Happy to discuss how this translates to Ledger's APAC and US channel goals.</p>
-    <div class="cta-group">
-      <a href="javascript:void(0)" onclick="window.location='mai'+'lto:'+'sparichit6'+'@'+'gmail.com'" class="cta-button">Send an Email</a>
-      <a href="https://linkedin.com/in/parichit" class="cta-link" target="_blank">LinkedIn Profile ↗</a>
+<!-- SECTION 6: CTA -->
+<section class="black-section" id="contact">
+  <div class="section-inner" style="text-align:center;">
+    <p class="section-eyebrow animate-on-scroll" style="color:#86868B;">Let's talk</p>
+    <h2 class="section-heading animate-on-scroll" style="color:var(--text-primary-dark);">Ready when you are.</h2>
+    <p class="section-subheading animate-on-scroll" style="color:var(--text-secondary-dark);">I'm based in Paris, available immediately, and genuinely curious about what Naboo is building on the Host side. Would really enjoy having a conversation with Bryan to discuss the role.</p>
+
+    <div class="contact-grid animate-on-scroll" style="margin-bottom: 48px;">
+      <div class="contact-item">
+        <div class="contact-label">Email</div>
+        <div class="contact-value"><a id="email-link-display" href="#" style="color:var(--accent-blue-soft);">sparichit6&#64;gmail.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Phone</div>
+        <div class="contact-value" style="color:var(--text-primary-dark);">+33 7 52 98 35 75</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-value"><a href="https://linkedin.com/in/parichit" target="_blank">linkedin.com/in/parichit</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Location</div>
+        <div class="contact-value" style="color:var(--text-primary-dark);">Paris, France</div>
+      </div>
     </div>
-    <div class="contact-row">
-      <div class="contact-item">✉ sparichit6&#64;gmail.com</div>
-      <div class="contact-item">📞 <a href="tel:+33752983575">+33 752 983 575</a></div>
-      <div class="contact-item">📍 Paris, France</div>
+
+    <div class="cta-group animate-on-scroll" style="justify-content:center;">
+      <a id="email-link-cta" href="#" class="cta-button">Send an email</a>
+      <a href="https://linkedin.com/in/parichit" class="cta-link" target="_blank">View LinkedIn profile ↗</a>
     </div>
+
+    <p style="margin-top:64px; font-size:13px; color:#3A3A3C;">Made by Parichit Sharma · Application for Naboo · Partnership, SEO &amp; CRM Marketing · Paris 2026</p>
   </div>
 </section>
-
-
-<footer>
-  <p>Parichit Sharma — Application for Channel Marketing Specialist · Ledger · 2026</p>
-</footer>
 
 <script>
-  document.documentElement.classList.add('js-loaded');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.animate-on-scroll').forEach(el => {
-    observer.observe(el);
-  });
+  (function() {
+    var u = 'sparichit6';
+    var d = 'gmail.com';
+    var href = 'mailto:' + u + '@' + d;
+    var display = document.getElementById('email-link-display');
+    var cta = document.getElementById('email-link-cta');
+    if (display) { display.href = href; display.textContent = u + '@' + d; }
+    if (cta) { cta.href = href; }
+  })();
 </script>
 </body>
 </html>
