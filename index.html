@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parichit Sharma — Channel Marketing Specialist · Ledger</title>
+<style>
+  :root {
+    --bg-white: #FFFFFF;
+    --bg-light: #F5F5F7;
+    --bg-dark: #1D1D1F;
+    --bg-black: #000000;
+    --text-primary-light: #1D1D1F;
+    --text-secondary-light: #6E6E73;
+    --text-primary-dark: #F5F5F7;
+    --text-secondary-dark: #A1A1A6;
+    --accent-blue: #0071E3;
+    --accent-blue-hover: #0077ED;
+    --accent-navy: #1D3557;
+    --accent-navy-light: #2B5797;
+    --accent-blue-soft: #5E9EFF;
+    --divider-light: rgba(0,0,0,0.1);
+    --divider-dark: rgba(255,255,255,0.1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg-white);
+    color: var(--text-primary-light);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 48px;
+    z-index: 9999;
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    font-size: 14px;
+  }
+  .nav-name { font-weight: 600; color: var(--text-primary-light); text-decoration: none; }
+  .nav-links { display: flex; gap: 24px; list-style: none; }
+  .nav-links a { color: var(--text-secondary-light); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent-blue); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--bg-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+  }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+  }
+  .hero-eyebrow {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-blue-soft);
+    margin-bottom: 20px;
+    padding: 8px 20px;
+    border: 1px solid rgba(94,158,255,0.35);
+    border-radius: 980px;
+    display: inline-block;
+  }
+  .hero h1 {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--text-primary-dark);
+    margin-bottom: 24px;
+  }
+  .hero-subtitle {
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-secondary-dark);
+    max-width: 600px;
+    margin-bottom: 48px;
+  }
+  .text-blue-dark { color: var(--accent-blue-soft); }
+  .text-blue { color: var(--accent-navy-light); }
+  .cta-group {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .cta-button {
+    display: inline-block;
+    background: var(--accent-blue);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 980px;
+    font-size: 17px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  .cta-button:hover { background: var(--accent-blue-hover); }
+  .cta-link {
+    display: inline-block;
+    color: var(--accent-blue-soft);
+    font-size: 17px;
+    text-decoration: none;
+  }
+  .cta-link:hover { text-decoration: underline; }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 100px 24px;
+  }
+  .section-inner {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  .section-eyebrow {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .light-section .section-eyebrow { color: var(--accent-navy); }
+  .dark-section .section-eyebrow { color: #86868B; }
+
+  .section-heading {
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .light-section .section-heading { color: var(--text-primary-light); }
+  .dark-section .section-heading { color: var(--text-primary-dark); }
+
+  .section-subheading {
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.38;
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .light-section .section-subheading { color: var(--text-secondary-light); }
+  .dark-section .section-subheading { color: var(--text-secondary-dark); }
+
+  .body-copy {
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 1.58;
+  }
+  .light-section .body-copy { color: var(--text-secondary-light); }
+  .dark-section .body-copy { color: var(--text-secondary-dark); }
+
+  .light-section { background: var(--bg-light); }
+  .dark-section { background: var(--bg-dark); }
+  .white-section { background: var(--bg-white); }
+
+  /* ── FEATURE GRID ── */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 0;
+  }
+  .feature-card {
+    border-radius: 18px;
+    padding: 40px 32px;
+    text-align: left;
+  }
+  .light-section .feature-card { background: var(--bg-white); }
+  .white-section .feature-card { background: var(--bg-light); }
+  .dark-section .feature-card { background: rgba(255,255,255,0.06); }
+
+  .card-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 980px;
+    margin-bottom: 16px;
+  }
+  .badge-blue { background: rgba(0,113,227,0.12); color: var(--accent-blue); }
+  .badge-green { background: rgba(52,199,89,0.12); color: #34C759; }
+  .badge-orange { background: rgba(255,159,10,0.12); color: #FF9F0A; }
+  .badge-purple { background: rgba(175,82,222,0.12); color: #AF52DE; }
+  .badge-red { background: rgba(255,59,48,0.12); color: #FF3B30; }
+
+  .feature-card h3 {
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.24;
+    letter-spacing: -0.005em;
+    margin-bottom: 12px;
+  }
+  .light-section .feature-card h3,
+  .white-section .feature-card h3 { color: var(--text-primary-light); }
+  .dark-section .feature-card h3 { color: var(--text-primary-dark); }
+
+  .feature-card p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .light-section .feature-card p,
+  .white-section .feature-card p { color: var(--text-secondary-light); }
+  .dark-section .feature-card p { color: var(--text-secondary-dark); }
+
+  /* ── FIT GRID ── */
+  .fit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-top: 0;
+  }
+  .fit-cell {
+    padding: 40px 32px;
+  }
+  .fit-cell.left { background: rgba(255,255,255,0.04); }
+  .fit-cell.right { background: rgba(255,255,255,0.08); }
+  .fit-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #86868B;
+    margin-bottom: 12px;
+  }
+  .fit-cell h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary-dark);
+    margin-bottom: 10px;
+  }
+  .fit-cell p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-secondary-dark);
+  }
+  .fit-metric {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent-blue-soft);
+    margin-bottom: 4px;
+  }
+
+  /* ── 90 DAYS ── */
+  .moves-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .move-card {
+    background: var(--bg-light);
+    border-radius: 18px;
+    padding: 40px 32px;
+  }
+  .move-number {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--accent-navy-light);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .move-card h3 {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--text-primary-light);
+    margin-bottom: 12px;
+  }
+  .move-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-secondary-light);
+    margin-bottom: 16px;
+  }
+  .move-impact {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent-navy-light);
+    border-top: 1px solid var(--divider-light);
+    padding-top: 16px;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    padding: 32px 0;
+    border-top: 1px solid var(--divider-light);
+  }
+  .timeline-date {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary-light);
+    padding-top: 4px;
+  }
+  .timeline-content h3 {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--text-primary-light);
+    margin-bottom: 4px;
+  }
+  .timeline-org {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent-blue);
+    margin-bottom: 12px;
+  }
+  .timeline-content ul {
+    padding-left: 18px;
+  }
+  .timeline-content li {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-secondary-light);
+    margin-bottom: 6px;
+  }
+
+  /* ── STATS ROW ── */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 64px;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+  .stat-cell {
+    background: rgba(255,255,255,0.05);
+    padding: 40px 24px;
+    text-align: center;
+  }
+  .stat-number {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary-dark);
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--text-secondary-dark);
+  }
+
+  /* ── CTA SECTION ── */
+  .cta-section {
+    background: var(--bg-black);
+    text-align: center;
+    padding: 120px 24px;
+  }
+  .cta-section h2 {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--text-primary-dark);
+    margin-bottom: 16px;
+  }
+  .cta-section p {
+    font-size: 19px;
+    color: var(--text-secondary-dark);
+    margin-bottom: 48px;
+  }
+  .contact-row {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 48px;
+  }
+  .contact-item {
+    font-size: 15px;
+    color: var(--text-secondary-dark);
+  }
+  .contact-item a { color: var(--accent-blue-soft); text-decoration: none; }
+  .contact-item a:hover { text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--bg-black);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 24px;
+    text-align: center;
+    font-size: 13px;
+    color: #555;
+  }
+
+  /* ── ANIMATIONS ── */
+  .js-loaded .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25,0.46,0.45,0.94),
+                transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+  .js-loaded .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+  .js-loaded .delay-1 { transition-delay: 0.1s; }
+  .js-loaded .delay-2 { transition-delay: 0.2s; }
+  .js-loaded .delay-3 { transition-delay: 0.3s; }
+  .js-loaded .delay-4 { transition-delay: 0.4s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 734px) {
+    .hero h1 { font-size: 36px; }
+    .section-heading { font-size: 28px; }
+    section { padding: 72px 24px; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .fit-grid { grid-template-columns: 1fr; }
+    .moves-grid { grid-template-columns: 1fr; }
+    .timeline-item { grid-template-columns: 1fr; gap: 8px; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .cta-section h2 { font-size: 32px; }
+  }
+  @media (min-width: 735px) and (max-width: 1068px) {
+    .hero h1 { font-size: 48px; }
+    .section-heading { font-size: 36px; }
+    .moves-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-name">Parichit Sharma &nbsp;·&nbsp; <span style="font-weight:400; color: var(--accent-blue);">Application for Ledger</span></a>
+  <ul class="nav-links">
+    <li><a href="#research">Intelligence</a></li>
+    <li><a href="#fit">Why Me</a></li>
+    <li><a href="#90days">First 90 Days</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Job Application — Channel Marketing Specialist · Ledger · Paris</p>
+    <h1>The Channel Is Where <span class="text-blue-dark">Trust</span> Gets Built.</h1>
+    <p class="hero-subtitle">Ledger secures 20% of the world's crypto assets. That story only holds if every retail touchpoint executes flawlessly. That's where I come in.</p>
+    <div class="cta-group">
+      <a href="#fit" class="cta-button">See the Match</a>
+      <a href="#contact" class="cta-link">Get in touch ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY INTELLIGENCE -->
+<section class="dark-section" id="research">
+  <div class="section-inner">
+    <p class="section-eyebrow animate-on-scroll">Company Intelligence</p>
+    <h2 class="section-heading animate-on-scroll delay-1">What I Know About <span class="text-blue-dark">Ledger</span></h2>
+    <p class="section-subheading animate-on-scroll delay-2">Four insights — none of which repeat the job description.</p>
+
+    <div class="feature-grid">
+      <div class="feature-card animate-on-scroll">
+        <span class="card-badge badge-blue">Market Position</span>
+        <h3>The Infrastructure Play</h3>
+        <p>Ledger doesn't compete on price. With 7.5M+ wallets in 200 countries, it's the crypto industry's trust layer. That creates a clear channel challenge: scale through mass retail without diluting a premium brand.</p>
+      </div>
+      <div class="feature-card animate-on-scroll delay-1">
+        <span class="card-badge badge-green">Growth Signal</span>
+        <h3>APAC & US — The Revenue Frontier</h3>
+        <p>The wholesale team is explicitly focused here. These markets behave differently from EMEA — partner expectations, compliance contexts, and consumer trust signals all shift. Channel fluency across retail cultures is the job.</p>
+      </div>
+      <div class="feature-card animate-on-scroll delay-2">
+        <span class="card-badge badge-purple">Brand Risk</span>
+        <h3>Premium Brand, Mass Distribution</h3>
+        <p>Every partner touchpoint — US electronics chain, Asian marketplace banner — is a brand compliance moment. Protecting Ledger's premium image at distribution scale requires someone who has done this before, in demanding retail environments.</p>
+      </div>
+      <div class="feature-card animate-on-scroll delay-3">
+        <span class="card-badge badge-orange">Industry Shift</span>
+        <h3>Web3 Goes Mainstream</h3>
+        <p>Ledger devices are increasingly shelved next to headphones and smart gadgets. Channel marketing must now speak to the crypto-native and the curious first-timer — simultaneously.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETITOR LANDSCAPE -->
+<section class="light-section">
+  <div class="section-inner">
+    <p class="section-eyebrow animate-on-scroll">Competitive Landscape</p>
+    <h2 class="section-heading animate-on-scroll delay-1">The Market <span class="text-blue">Ledger Plays In</span></h2>
+    <p class="section-subheading animate-on-scroll delay-2">Three dynamics shaping the channel opportunity.</p>
+
+    <div class="feature-grid">
+      <div class="feature-card animate-on-scroll">
+        <span class="card-badge badge-red">Competitor Gap</span>
+        <h3>Trezor: Strong on Credibility, Weak on Retail</h3>
+        <p>Trezor wins with technical audiences on open-source grounds. But its retail presence is thin. Ledger can own the in-store moment — the first hardware wallet purchase by a non-technical buyer — where Trezor rarely competes.</p>
+      </div>
+      <div class="feature-card animate-on-scroll delay-1">
+        <span class="card-badge badge-blue">Channel Opportunity</span>
+        <h3>Distribution Depth Is the Moat</h3>
+        <p>No competitor matches Ledger's retail network. That makes channel execution — not R&D — the real competitive edge. Asset quality, launch coordination, and ROI discipline directly determine whether Ledger defends or grows its share.</p>
+      </div>
+      <div class="feature-card animate-on-scroll delay-2">
+        <span class="card-badge badge-green">Whitespace</span>
+        <h3>Trust Storytelling at Retail</h3>
+        <p>Category assets tend to be technical and fear-driven. The brand that makes self-custody feel empowering — especially in APAC, where adoption is accelerating — wins the mainstream buyer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ME -->
+<section class="dark-section" id="fit">
+  <div class="section-inner">
+    <p class="section-eyebrow animate-on-scroll">Profile Match</p>
+    <h2 class="section-heading animate-on-scroll delay-1">Built for This Role.</h2>
+    <p class="section-subheading animate-on-scroll delay-2">Every requirement paired with a proof point.</p>
+
+    <div class="fit-grid animate-on-scroll">
+      <div class="fit-cell left">
+        <p class="fit-label">What Ledger Needs</p>
+        <h3>End-to-end campaign execution across retail partners</h3>
+        <p>Online and offline, awareness to conversion, across regional partner networks.</p>
+      </div>
+      <div class="fit-cell right">
+        <p class="fit-label">What I've Delivered</p>
+        <div class="fit-metric">€250K</div>
+        <p>Full-funnel campaigns across 30+ luxury retail partners (Chanel, Prada) in 6 EMEA markets — €250K incremental revenue, +24.6% ROI.</p>
+      </div>
+
+      <div class="fit-cell left">
+        <p class="fit-label">What Ledger Needs</p>
+        <h3>In-store display & digital asset production</h3>
+        <p>Concept to delivery, coordinating design, vendors, and regional teams.</p>
+      </div>
+      <div class="fit-cell right">
+        <p class="fit-label">What I've Delivered</p>
+        <div class="fit-metric">15+</div>
+        <p>Produced 15+ digital assets for trade shows across DACH, Denmark, and the Netherlands — 32% event visibility improvement, delivered on time.</p>
+      </div>
+
+      <div class="fit-cell left">
+        <p class="fit-label">What Ledger Needs</p>
+        <h3>Performance tracking & revenue optimization</h3>
+        <p>Rigorous ROI monitoring focused on revenue impact.</p>
+      </div>
+      <div class="fit-cell right">
+        <p class="fit-label">What I've Delivered</p>
+        <div class="fit-metric">−21%</div>
+        <p>ROI dashboards (ROAS, CPA, CTR) at Global Blue cut campaign decision time by 21% and supported pipeline growth across strategic accounts.</p>
+      </div>
+
+      <div class="fit-cell left">
+        <p class="fit-label">What Ledger Needs</p>
+        <h3>Cross-functional & partner coordination</h3>
+        <p>Central point of contact between external partners and Sales, Design, Content.</p>
+      </div>
+      <div class="fit-cell right">
+        <p class="fit-label">What I've Delivered</p>
+        <div class="fit-metric">23</div>
+        <p>Managed 23 GTM launches at Upfluence — coordinating Sales, Design, and Content — driving adoption across 73 enterprise clients in France and APAC.</p>
+      </div>
+
+      <div class="fit-cell left">
+        <p class="fit-label">What Ledger Needs</p>
+        <h3>AI tools & Web3 mindset</h3>
+        <p>Comfort using AI to streamline workflows and appetite for the crypto ecosystem.</p>
+      </div>
+      <div class="fit-cell right">
+        <p class="fit-label">What I've Delivered</p>
+        <div class="fit-metric">−46%</div>
+        <p>Integrated AI tools across 4 B2B clients at Emergence Software — campaign launch time from 5+ days to under 3, reporting time cut by 46%.</p>
+      </div>
+    </div>
+
+    <div class="stats-row animate-on-scroll">
+      <div class="stat-cell">
+        <div class="stat-number">30+</div>
+        <div class="stat-label">Retail partners managed simultaneously</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-number">6</div>
+        <div class="stat-label">EMEA markets — campaigns live at once</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-number">73</div>
+        <div class="stat-label">Enterprise clients — GTM coordination</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-number">480</div>
+        <div class="stat-label">Qualified B2B leads generated in one quarter</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 90 DAYS -->
+<section class="white-section" id="90days">
+  <div class="section-inner">
+    <p class="section-eyebrow animate-on-scroll">First 90 Days</p>
+    <h2 class="section-heading animate-on-scroll delay-1">Three Moves I Would Explore</h2>
+    <p class="section-subheading animate-on-scroll delay-2">Hypotheses — informed by research, calibrated by ground reality.</p>
+
+    <div class="moves-grid">
+      <div class="move-card animate-on-scroll">
+        <div class="move-number">01</div>
+        <h3>Partner Asset Audit & Brand Sweep</h3>
+        <p>Map every live retail touchpoint across APAC and US partners — displays, banners, e-commerce listings — against Ledger's brand standards. Gaps become the action list.</p>
+        <p class="move-impact">→ Eliminate brand risk before the next campaign cycle. Build credibility with Design and Sales fast.</p>
+      </div>
+      <div class="move-card animate-on-scroll delay-1">
+        <div class="move-number">02</div>
+        <h3>ROI Baseline — Channel by Channel</h3>
+        <p>Establish a shared dashboard tracking ROAS, CPA, and conversion by partner and region. Surface what's actually driving revenue, and give leadership faster budget decisions.</p>
+        <p class="move-impact">→ Data-informed channel prioritisation for Q3/Q4. Less reporting overhead, more decision speed.</p>
+      </div>
+      <div class="move-card animate-on-scroll delay-2">
+        <div class="move-number">03</div>
+        <h3>APAC Partner Localisation Guide</h3>
+        <p>APAC retail markets have distinct visual norms and compliance expectations. A lightweight localisation guide for partner assets reduces back-and-forth without diluting Ledger's messaging.</p>
+        <p class="move-impact">→ Faster asset delivery in APAC. Stronger partner relationships through proactive support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="light-section" id="experience">
+  <div class="section-inner">
+    <p class="section-eyebrow animate-on-scroll">Background</p>
+    <h2 class="section-heading animate-on-scroll delay-1">The Credibility Behind the Claims</h2>
+    <p class="section-subheading animate-on-scroll delay-2">Channel, partner, and campaign execution across B2B SaaS, luxury retail, and sustainability tech.</p>
+
+    <div class="timeline animate-on-scroll">
+      <div class="timeline-item">
+        <div class="timeline-date">Oct 2025 – Present</div>
+        <div class="timeline-content">
+          <h3>Growth & Marketing Strategy Consultant</h3>
+          <div class="timeline-org">Emergence Software · Paris</div>
+          <ul>
+            <li>Performance dashboard across 8 acquisition metrics — reporting time cut by 46%</li>
+            <li>AI tool integration across 4 B2B clients — campaign launch from 5+ days to under 3</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Feb – May 2025</div>
+        <div class="timeline-content">
+          <h3>Associate Digital Marketing Manager</h3>
+          <div class="timeline-org">Global Blue · Paris (B2B SaaS — luxury retail)</div>
+          <ul>
+            <li>30+ retail partners (Chanel, Prada), 6 EMEA markets → €250K revenue, +24.6% ROI</li>
+            <li>15+ digital assets for DACH & Nordic trade shows → 32% visibility improvement</li>
+            <li>ROI dashboards (ROAS, CPA, CTR) → −21% campaign decision time</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Mar – Oct 2024</div>
+        <div class="timeline-content">
+          <h3>Associate Product Marketing Manager</h3>
+          <div class="timeline-org">Upfluence · Lyon (B2B SaaS — influencer marketing)</div>
+          <ul>
+            <li>23 GTM launches, 73 enterprise clients across France and APAC</li>
+            <li>21+ partner assets → +25% content engagement, €160K quarterly revenue growth</li>
+            <li>480 qualified B2B leads via paid social, search, and partner outreach</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Apr 2019 – Feb 2023</div>
+        <div class="timeline-content">
+          <h3>Product & Growth Marketing Manager</h3>
+          <div class="timeline-org">ARTH · New Delhi (B2B Envirotech)</div>
+          <ul>
+            <li>Brand expansion across 200 sq. km in 11 months — OOH, events, social</li>
+            <li>London Business School Real Innovation Award</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="max-width: 780px; margin: 48px auto 0; padding-top: 32px; border-top: 1px solid var(--divider-light);">
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px;">
+        <div>
+          <p style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--accent-navy); margin-bottom: 10px;">Education</p>
+          <p style="font-size: 15px; font-weight: 600; color: var(--text-primary-light); margin-bottom: 4px;">MSc Marketing Management</p>
+          <p style="font-size: 13px; color: var(--text-secondary-light);">Grenoble École de Management, 2022–2025</p>
+        </div>
+        <div>
+          <p style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--accent-navy); margin-bottom: 10px;">Languages</p>
+          <p style="font-size: 15px; color: var(--text-secondary-light);">English (native) · French (professional)</p>
+        </div>
+        <div>
+          <p style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--accent-navy); margin-bottom: 10px;">Status</p>
+          <p style="font-size: 15px; color: var(--text-secondary-light);">APS — fully authorised to work in France. Based in Paris.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div style="max-width: 600px; margin: 0 auto;">
+    <p style="font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #86868B; margin-bottom: 16px;">Let's Talk</p>
+    <h2>Ready to make Ledger's <span style="color: var(--accent-blue-soft);">channel stronger.</span></h2>
+    <p>Happy to discuss how this translates to Ledger's APAC and US channel goals.</p>
+    <div class="cta-group">
+      <a href="javascript:void(0)" onclick="window.location='mai'+'lto:'+'sparichit6'+'@'+'gmail.com'" class="cta-button">Send an Email</a>
+      <a href="https://linkedin.com/in/parichit" class="cta-link" target="_blank">LinkedIn Profile ↗</a>
+    </div>
+    <div class="contact-row">
+      <div class="contact-item">✉ sparichit6&#64;gmail.com</div>
+      <div class="contact-item">📞 <a href="tel:+33752983575">+33 752 983 575</a></div>
+      <div class="contact-item">📍 Paris, France</div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <p>Parichit Sharma — Application for Channel Marketing Specialist · Ledger · 2026</p>
+</footer>
+
+<script>
+  document.documentElement.classList.add('js-loaded');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
